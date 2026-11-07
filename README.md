@@ -1,65 +1,62 @@
 # FoodVision AI
 
-FoodVision AI is a personal Computer Vision learning project exploring four food image analysis applications using Python and pretrained AI models. The goal is to demonstrate practical AI capabilities through simple applications, targeting approximately 30 lines of code (LOC) per application.
+**A personal Computer Vision learning project, built one experiment at a time.**
+
+FoodVision AI explores practical applications of Computer Vision through four simple food image analysis applications. Built with Python and pretrained AI models, the project demonstrates how different AI capabilities can be implemented with approximately 30 lines of code (LOC) per application.
+
+The project is developed in my spare time as a learning experiment. There is no fixed release schedule — just ideas, experiments, and occasional progress. Suggestions, feedback, and contributions are welcome!
 
 ## Project Roadmap
 
-The project consists of four planned applications:
+| Application | Computer Vision Task | Proposed AI Model | Status |
+|---|---|---|---|
+| FoodDetect | Image Classification | YOLO26n-cls | ✅ Completed |
+| FoodDescribe | Image Captioning | Salesforce BLIP | 📋 Planned |
+| FoodCounter | Object Detection | YOLO26n | 📋 Planned |
+| FoodHealth | Image Segmentation | YOLO26n-seg | 📋 Planned |
 
-| Application | Use Case | Computer Vision Task | Proposed AI Model | Status |
-|---|---|---|---|---|
-| **FoodDetect** | Identify food categories, e.g. burger or pizza | Image Classification | YOLO26n-cls | ✅ Completed |
-| **FoodDescribe** | Describe visible food, e.g. burger with lettuce | Image Captioning | Salesforce BLIP | 🔜 Planned |
-| **FoodCounter** | Locate and count food items in an image | Object Detection | YOLO26n | 🔜 Planned |
-| **FoodHealth** | Identify food regions for composition analysis | Image Segmentation | YOLO26n-seg | 🔜 Planned |
+*Model selections are experimental and may evolve as the project develops.*
 
-## Current Progress
+## Current Application
 
-**As of 7 November 2026, only FoodDetect has been implemented.** The remaining three applications are planned as the next stages of this project.
+### FoodDetect — Food Image Classification
 
-One application down, three more to explore!
+FoodDetect uses a pretrained YOLO26n classification model to identify food categories in an uploaded image. It returns the top five predictions with confidence scores through a simple Gradio web interface.
 
-## FoodDetect – Image Classification
+![FoodDetect Application](fooddetect.png)
 
-FoodDetect is the first working application. It uses the lightweight YOLO26n-cls pretrained model to classify uploaded images and return the top five predictions with confidence scores.
+**Try it yourself:**
 
-### Application Screenshot
+[![Open in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/priandoyo/foodvision/blob/main/fooddetect.ipynb)
 
-![FoodDetect AI Application](fooddetect.png)
-
-### Try FoodDetect in Google Colab
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/priandoyo/foodvision/blob/main/fooddetect.ipynb)
-
-### How to Run
-
-1. Open FoodDetect using the Google Colab link.
-2. Select **File → Save a copy in Drive**.
-3. Run the notebook.
-4. Upload a food image.
-5. Explore the AI classification results.
-
-## Technology
+## Technology Stack
 
 - **Programming Language:** Python
 - **Development Environment:** Google Colab
 - **Web Interface:** Gradio
-- **AI Framework:** Ultralytics and Hugging Face Transformers
-- **AI Models:** YOLO, Salesforce BLIP, CLIP, and Vision Transformers (ViT)
+- **AI Frameworks:** Ultralytics and Hugging Face Transformers
+- **AI Models and approaches:** YOLO, Salesforce BLIP, CLIP, and Vision Transformers (ViT)
 
 ## Learning Objectives
 
-This project explores how pretrained AI models can be integrated into simple applications without training models from scratch. It also provides an opportunity to experiment with prompt engineering, Python programming, and practical Computer Vision concepts.
+- Explore practical Computer Vision applications.
+- Experiment with pretrained AI models without training from scratch.
+- Learn basic Python programming and AI integration.
+- Use ChatGPT for prompt engineering and application development.
+- Understand how simple Python code can become a working AI application.
 
-## Repository Structure
+## Development Progress
 
-```text
-foodvision/
-├── README.md
-├── fooddetect.ipynb
-└── fooddetect.png
-```
+As of 7 November 2026, FoodDetect is the first completed application. FoodDescribe, FoodCounter, and FoodHealth remain on the roadmap.
 
-Additional notebooks and application screenshots will be added as the project develops.
+See the [Development Log](devlog/) for project updates and experiments.
 
-**Project Status:** Work in Progress 🚧
+## Contributions and Ideas
+
+This is a personal learning project, but collaboration is welcome!
+
+Ideas, suggestions, model recommendations, code improvements, and contributions are appreciated. Whether you are an experienced developer or someone learning AI, feel free to explore the project and share your thoughts.
+
+**Built for learning, curiosity, and fun.**
+
+*One experiment at a time. No deadlines, just code.*
