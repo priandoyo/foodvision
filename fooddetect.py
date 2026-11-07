@@ -1,45 +1,41 @@
-# FOODDETECT AI - Food Image Classification
-
-!pip install -q ultralytics gradio
+# FOODDETECT AI - Fast YOLO Classification
 
 from ultralytics import YOLO
 import gradio as gr
 
-# 1. Load pretrained AI model
+# Load pretrained AI model
 model = YOLO("yolo26n-cls.pt")
 
-# 2. Food classification function
+# Food classification
 def detect_food(image):
 
     if image is None:
         return "Please upload a food image."
 
-    results = model.predict(
+    result = model.predict(
         image,
         imgsz=224,
         verbose=False
     )[0]
 
-    # Display top 5 predictions
     output = ""
 
     for class_id, confidence in zip(
-        results.probs.top5,
-        results.probs.top5conf
+        result.probs.top5,
+        result.probs.top5conf
     ):
-        food = results.names[class_id]
+        food = result.names[class_id]
         output += f"{food}: {float(confidence):.2%}\n"
 
     return output
 
-# 3. Create web application
+# Create website
 app = gr.Interface(
     fn=detect_food,
     inputs=gr.Image(type="pil", label="Upload Food Image"),
     outputs=gr.Textbox(label="Classification Results"),
     title="FoodDetect AI",
-    description="Upload a food image and let AI identify its category."
+    description="Fast AI-powered food image classification using YOLO."
 )
 
-# 4. Launch website
 app.launch(share=True)
